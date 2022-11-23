@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 public class Empleados
 {
     [Key]
+    //public bool EstaEliminado { get; set; } = false;
     public int EmpleadoId { get; set; }
 
     [Required(ErrorMessage = "Favor de Ingresar el nombre.")]

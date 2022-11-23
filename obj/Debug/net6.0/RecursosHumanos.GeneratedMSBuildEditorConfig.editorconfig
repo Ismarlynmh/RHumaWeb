@@ -8,81 +8,81 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = RecursosHumanos
 build_property.RootNamespace = RecursosHumanos
-build_property.ProjectDir = C:\Users\Ismarlin\OneDrive\Documentos\Semestre ProyectoAplicado\Proyecto Aplicado\Recursos\
+build_property.ProjectDir = C:\Users\Ismarlin\Source\Repos\RHumaWeb\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Ismarlin\OneDrive\Documentos\Semestre ProyectoAplicado\Proyecto Aplicado\Recursos
+build_property.MSBuildProjectDirectory = C:\Users\Ismarlin\Source\Repos\RHumaWeb
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Ismarlin/OneDrive/Documentos/Semestre ProyectoAplicado/Proyecto Aplicado/Recursos/App.razor]
+[C:/Users/Ismarlin/Source/Repos/RHumaWeb/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ismarlin/OneDrive/Documentos/Semestre ProyectoAplicado/Proyecto Aplicado/Recursos/Pages/Consultas/C_Ausencias.razor]
+[C:/Users/Ismarlin/Source/Repos/RHumaWeb/Pages/Consultas/C_Ausencias.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29uc3VsdGFzXENfQXVzZW5jaWFzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ismarlin/OneDrive/Documentos/Semestre ProyectoAplicado/Proyecto Aplicado/Recursos/Pages/Consultas/C_Empleados.razor]
+[C:/Users/Ismarlin/Source/Repos/RHumaWeb/Pages/Consultas/C_Empleados.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29uc3VsdGFzXENfRW1wbGVhZG9zLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ismarlin/OneDrive/Documentos/Semestre ProyectoAplicado/Proyecto Aplicado/Recursos/Pages/Consultas/C_Licencias.razor]
+[C:/Users/Ismarlin/Source/Repos/RHumaWeb/Pages/Consultas/C_Licencias.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29uc3VsdGFzXENfTGljZW5jaWFzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ismarlin/OneDrive/Documentos/Semestre ProyectoAplicado/Proyecto Aplicado/Recursos/Pages/Consultas/C_Vacaciones.razor]
+[C:/Users/Ismarlin/Source/Repos/RHumaWeb/Pages/Consultas/C_Vacaciones.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29uc3VsdGFzXENfVmFjYWNpb25lcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ismarlin/OneDrive/Documentos/Semestre ProyectoAplicado/Proyecto Aplicado/Recursos/Pages/Index.razor]
+[C:/Users/Ismarlin/Source/Repos/RHumaWeb/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ismarlin/OneDrive/Documentos/Semestre ProyectoAplicado/Proyecto Aplicado/Recursos/Pages/Registros/R_Ausencias.razor]
+[C:/Users/Ismarlin/Source/Repos/RHumaWeb/Pages/Registros/R_Ausencias.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cm9zXFJfQXVzZW5jaWFzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ismarlin/OneDrive/Documentos/Semestre ProyectoAplicado/Proyecto Aplicado/Recursos/Pages/Registros/R_Empleados.razor]
+[C:/Users/Ismarlin/Source/Repos/RHumaWeb/Pages/Registros/R_Empleados.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cm9zXFJfRW1wbGVhZG9zLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ismarlin/OneDrive/Documentos/Semestre ProyectoAplicado/Proyecto Aplicado/Recursos/Pages/Registros/R_Licencias.razor]
+[C:/Users/Ismarlin/Source/Repos/RHumaWeb/Pages/Registros/R_Licencias.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cm9zXFJfTGljZW5jaWFzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ismarlin/OneDrive/Documentos/Semestre ProyectoAplicado/Proyecto Aplicado/Recursos/Pages/Registros/R_Nomina.razor]
+[C:/Users/Ismarlin/Source/Repos/RHumaWeb/Pages/Registros/R_Nomina.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cm9zXFJfTm9taW5hLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ismarlin/OneDrive/Documentos/Semestre ProyectoAplicado/Proyecto Aplicado/Recursos/Pages/Registros/R_Vacaciones.razor]
+[C:/Users/Ismarlin/Source/Repos/RHumaWeb/Pages/Registros/R_Vacaciones.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cm9zXFJfVmFjYWNpb25lcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ismarlin/OneDrive/Documentos/Semestre ProyectoAplicado/Proyecto Aplicado/Recursos/Shared/SurveyPrompt.razor]
+[C:/Users/Ismarlin/Source/Repos/RHumaWeb/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ismarlin/OneDrive/Documentos/Semestre ProyectoAplicado/Proyecto Aplicado/Recursos/_Imports.razor]
+[C:/Users/Ismarlin/Source/Repos/RHumaWeb/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ismarlin/OneDrive/Documentos/Semestre ProyectoAplicado/Proyecto Aplicado/Recursos/Shared/MainLayout.razor]
+[C:/Users/Ismarlin/Source/Repos/RHumaWeb/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-8td8xxmop4
 
-[C:/Users/Ismarlin/OneDrive/Documentos/Semestre ProyectoAplicado/Proyecto Aplicado/Recursos/Shared/NavMenu.razor]
+[C:/Users/Ismarlin/Source/Repos/RHumaWeb/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-n0cb5ytvkt
 
-[C:/Users/Ismarlin/OneDrive/Documentos/Semestre ProyectoAplicado/Proyecto Aplicado/Recursos/Pages/Error.cshtml]
+[C:/Users/Ismarlin/Source/Repos/RHumaWeb/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ismarlin/OneDrive/Documentos/Semestre ProyectoAplicado/Proyecto Aplicado/Recursos/Pages/_Host.cshtml]
+[C:/Users/Ismarlin/Source/Repos/RHumaWeb/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ismarlin/OneDrive/Documentos/Semestre ProyectoAplicado/Proyecto Aplicado/Recursos/Pages/_Layout.cshtml]
+[C:/Users/Ismarlin/Source/Repos/RHumaWeb/Pages/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

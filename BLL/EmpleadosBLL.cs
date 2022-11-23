@@ -42,6 +42,9 @@ public class EmpleadosBLL
     {
         _contexto.Entry(empleado).State = EntityState.Deleted;
         return _contexto.SaveChanges() > 0;
+        //Var empleado = contexto.Empleados.Find(empleadoId);
+        //empleado.EstaEliminado = true;
+        //contexto.SaveChanges();
     }
 
     public Empleados? Buscar(int empleadoId)
@@ -50,6 +53,9 @@ public class EmpleadosBLL
                 .Where(e => e.EmpleadoId == empleadoId)
                 .AsNoTracking()
                 .SingleOrDefault();
+        //return _contexto.Empleados
+        //        .Where(e => e.EmpleadoId == empleadoId && e.EstaEliminado == false)
+        //        .SingleOrDefault();
 
     }
 
@@ -59,5 +65,9 @@ public class EmpleadosBLL
             .AsNoTracking()
             .Where(Criterio)
             .ToList();
+        //return _contexto.Empleados
+        //        .Where(e => e.EstaEliminado == false)
+        //        .Where(Criterio)
+        //        .ToList();
     }
 }
