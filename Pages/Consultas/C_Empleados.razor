@@ -1,0 +1,134 @@
+﻿@page "/empleados"
+@inject EmpleadosBLL empleadosBLL;
+
+<EditForm Model="lista">
+    <DataAnnotationsValidator />
+    <div class="card-header">
+        <h3>Consulta de Empleados</h3>
+    </div>
+
+    <div class="input-group">
+        @*Fecha*@
+        <div class="col-2">
+            <label> Desde</label>
+            <div class="mb-3">
+                <InputDate @bind-Value="FechaDesde" class="form-control" />
+                <ValidationMessage For="@(() => FechaDesde)" />
+            </div>
+        </div>
+        <div class="col-2 mx-3">
+            <label> Hasta</label>
+            <div class="mb-3">
+                <InputDate @bind-Value="FechaHasta" class="form-control" />
+                <ValidationMessage For="@(() => FechaHasta)" />
+            </div>
+        </div>
+    </div>
+    <div class="input-group">
+        <div class="col-2 mx-3">
+            <div class="row">
+                <select class="form-select">
+                    <option value="0" disabled> Seleccione una opcion</option>
+                    @* <option value="1">Todo</option> *@
+                    <option value="1">EmpleadoId</option>
+                    <option value="2">Nombre</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-2 mx-5">
+            <input type="text" class="form-control" @bind="Criterio">
+        </div>
+        <div class="col-2">
+            <div class="input-group-append">
+                <button type="button" @onclick="Buscar">
+                    <i>Buscar</i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>EmpleadoId</th>
+                <th>Nombre</th>
+                <th>Cedula</th>
+                <th>Estado civil</th>
+                <th>Direccion</th>
+                <th>Email</th>
+                <th>Celular</th>
+                <th>Telefono</th>
+                <th>Departamento</th>
+                <th>Cargo</th>
+                <th>Forma de pago</th>
+                <th>Fecha de ingreso</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var empleado in lista)
+            {
+                <tr>
+                    <td>@empleado.EmpleadoId</td>
+                    <td>@empleado.Nombre</td>
+                    <td>@empleado.Cedula</td>
+                    <td>@empleado.EstadoCivil</td>
+                    <td>@empleado.Direccion</td>
+                    <td>@empleado.Email</td>
+                    <td>@empleado.Celular</td>
+                    <td>@empleado.Telefono</td>
+                    <td>@empleado.Departamento</td>
+                    <td>@empleado.Cargo</td>
+                    <td>@empleado.FormaPago</td>
+                    <td>@empleado.FechaIngreso</td>
+                    <td><a href="empleados/@empleado.EmpleadoId">Ver</a></td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</EditForm>
+
+@code
+{
+    public string Filtro { get; set; } = "";
+
+    public string Criterio { get; set; } = "";
+
+    public DateTime FechaDesde { get; set; }
+
+    public DateTime FechaHasta { get; set; }
+
+    public Empleados empleado { get; set; } = new Empleados();
+
+    public List<Empleados> lista { get; set; } = new List<Empleados>();
+
+    public void Buscar()
+    {
+        lista = empleadosBLL.GetList(e => true);
+        if (Criterio != null)
+        {
+            switch (Filtro)
+            {
+                case "0":
+                    lista = empleadosBLL.GetList(e => true);
+                    break;
+                case "1":
+                    lista = empleadosBLL.GetList(e => e.EmpleadoId.ToString() == (Criterio));
+                    break;
+                case "3":
+                    lista = empleadosBLL.GetList(e => e.EmpleadoId.ToString() == (Criterio));
+                    break;
+            }
+        }
+        else
+        {
+            lista = empleadosBLL.GetList(x => (x.FechaIngreso >= FechaDesde) && (x.FechaIngreso <= FechaHasta));
+
+            if (Criterio == null)
+                lista = empleadosBLL.GetList(o => true);
+        }
+
+    }
+}

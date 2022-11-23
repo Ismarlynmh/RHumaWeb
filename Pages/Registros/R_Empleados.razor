@@ -1,0 +1,275 @@
+﻿@page "/empleado"
+@page "/empleados/{EmpleadoId:int}"
+
+@inject EmpleadosBLL empleadosBLL
+@inject NotificationService notificationService
+
+
+
+<EditForm Model="empleado" OnValidSubmit="Guardar">
+    <link rel="stylesheet" href="https: //cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <DataAnnotationsValidator />
+    <div class="card">
+        <div class="card-header">
+            <h3>Registro de Empleados</h3>
+        </div>
+        <div class="card-body">
+            <div class="container overflow-hidden">
+                <div class="row gy-6">
+                    @*EmpleadoId*@
+                    <label>Empleados ID</label>
+                    <div class="form-row align-items-center">
+                        <div class="col-5">
+                            <div class="mb-3">
+                                <div class="input-group">
+                                    <InputNumber @bind-Value="empleado.EmpleadoId" class="form-control" />
+                                    <div class="input-group-append">
+                                        <button type="button" class=" btn btn-primary input-group-text"
+                                            @onclick="Buscar"><i class="oi oi-magnifying-glass" /></button>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        @*Nombre*@
+                        <div class="mb-3">
+                            <label>Nombre y apellidos</label>
+                            <InputText @bind-Value="empleado.Nombre" class="form-control" />
+                            <ValidationMessage For="@(() => empleado.Nombre)" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        @*NumeroDeCedula*@
+                        <div class="mb-3">
+                            <label>Cedula</label>
+                            <InputText @bind-Value="empleado.Cedula" class="form-control" />
+                            <ValidationMessage For="@(() => empleado.Cedula)" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        @*EstadoCivil*@
+                        <div class="mb-3">
+                            <label>Estado civil</label>
+                            <InputText @bind-Value="empleado.EstadoCivil" class="form-control" />
+                            <ValidationMessage For="@(() => empleado.EstadoCivil)" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        @*Direccion*@
+                        <div class="mb-3">
+                            <label>Direccion</label>
+                            <InputText @bind-Value="empleado.Direccion" class="form-control" />
+                            <ValidationMessage For="@(() => empleado.Direccion)" />
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        @*Email*@
+                        <div class="mb-3">
+                            <label>Email</label>
+                            <InputText @bind-Value="empleado.Email" class="form-control" />
+                            <ValidationMessage For="@(() => empleado.Email)" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        @*Celular*@
+                        <div class="mb-3">
+                            <label>Celular</label>
+                            <InputText @bind-Value="empleado.Celular" class="form-control" />
+                            <ValidationMessage For="@(() => empleado.Celular)" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        @*Telefono*@
+                        <div class="mb-3">
+                            <label>Telefono</label>
+                            <InputText @bind-Value="empleado.Telefono" class="form-control" />
+                            <ValidationMessage For="@(() => empleado.Telefono)" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        @*Departamento*@
+                        <div class="mb-3">
+                            <label>Departamento</label>
+                            <InputText @bind-Value="empleado.Departamento" class="form-control" />
+                            <ValidationMessage For="@(() => empleado.Departamento)" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        @*Cargo*@
+                        <div class="mb-3">
+                            <label>Cargo</label>
+                            <InputText @bind-Value="empleado.Cargo" class="form-control" />
+                            <ValidationMessage For="@(() => empleado.Cargo)" />
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        @*Sueldo*@
+                        <div class="mb-3">
+                            <label>Sueldo</label>
+                            <InputNumber @bind-Value="empleado.Sueldo" class="form-control" />
+                            <ValidationMessage For="@(() => empleado.Sueldo)" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    @*FormaDePago*@
+                    <div class="mb-3">
+                        <label>Forma de pago</label>
+                        <InputSelect class="form-select" @bind-Value="empleado.FormaPago">
+                            <option value="0" disabled> Seleccione uno </option>
+                            <option value= "1">Quincenal</option> 
+                            <option value= "2">Mensual</option> 
+                        </InputSelect>
+                        <InputText @bind-Value="empleado.FormaPago" class="form-control" />
+                        <ValidationMessage For="@(() => empleado.FormaPago)" />
+                    </div>
+                </div>
+
+                <div class="col-5">
+                    @*Fecha*@
+                    <label> Fecha de ingreso</label>
+                    <div class="mb-3">
+                        <InputDate @bind-Value="empleado.FechaIngreso" class="form-control" />
+                        <ValidationMessage For="@(() => empleado.FechaIngreso)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1>
+            <span class="text-danger">@mensaje</span>
+        </h1>
+
+    </div>
+    <div class="card-footer">
+        <div class="form-group text-center" display: inline-block>
+            <button type="button" class="btn btn-lg btn-primary"> <i class="oi oi-file" /> Nuevo</button>
+            <button type="submit" class="btn btn-lg btn-success"><i class="oi oi-document" /> Guardar</button>
+            <button type="button" class="btn btn-lg btn-danger" @onclick="Eliminar"><i class="oi oi-trash" />
+                Eliminar</button>
+        </div>
+    </div>
+
+</EditForm>
+
+@code {
+    [Parameter]
+    public int EmpleadoId { get; set; }
+    public Empleados empleado { get; set; } = new Empleados();
+
+    public String mensaje { get; set; } = "";
+
+    public void Nuevo()
+    {
+        empleado = new Empleados();
+    }
+    bool Validar()
+    {
+        return empleado.Nombre.Contains(".");
+    }
+
+    protected override void OnInitialized()
+    {
+        if (EmpleadoId > 0)
+        {
+            //si recibimos una {OcupacionId:int} por parametro asignarla
+            // y luego buscarla para que se vea en pantalla
+            this.empleado.EmpleadoId = EmpleadoId;
+            this.Buscar();
+        }
+    }
+
+    public void Guardar()
+    {
+        bool guardo;
+
+        @* if (!Validar())
+            {
+            mensaje = "Hay errores, por favor corregir.";
+            return;
+            } *@
+
+        guardo = empleadosBLL.Guardar(this.empleado);
+
+        if (guardo)
+        {
+            ShowNotification(
+            new NotificationMessage
+            {
+                Severity = NotificationSeverity.Success,
+                Summary = "Guardado correctamente"
+            });
+
+            Nuevo();
+
+        }
+        else
+        {
+            ShowNotification(
+            new NotificationMessage
+            {
+                Severity = NotificationSeverity.Error,
+                Summary = "No se guardo correctamente."
+            });
+
+        }
+
+
+    }
+    private void Buscar()
+    {
+        if (empleado.EmpleadoId > 0)
+        {
+            var encontrado = empleadosBLL.Buscar(empleado.EmpleadoId);
+
+            if (encontrado != null)
+                this.empleado = encontrado;
+            else
+            {
+                ShowNotification(
+                new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Warning,
+                    Summary = "No Encontrado..."
+                });
+            }
+
+        }
+    }
+
+    public void Eliminar()
+    {
+        bool elimino;
+
+        elimino = empleadosBLL.Eliminar(empleado);
+
+        if (elimino)
+        {
+            Nuevo();
+            ShowNotification(
+            new NotificationMessage
+            {
+                Severity = NotificationSeverity.Success,
+                Summary = "Fue eliminado correctamente."
+            });
+        }
+        else
+        {
+            ShowNotification(
+            new NotificationMessage
+            {
+                Severity = NotificationSeverity.Error,
+                Summary = "No fue Eliminado, intentar nuevamente."
+            });
+        }
+    }
+    void ShowNotification(NotificationMessage message)
+    {
+        notificationService.Notify(message);
+
+    }
+}

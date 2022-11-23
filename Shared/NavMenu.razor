@@ -1,0 +1,72 @@
+﻿<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">RecursosHumanos</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="empleado">
+                <span class="oi oi-plus" aria-hidden="true"></span> Empleado
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="empleados">
+                <span class="oi oi-list" aria-hidden="true"></span> Empleados
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="licencia">
+                <span class="oi oi-plus" aria-hidden="true"></span> Licencia
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="licencias">
+                <span class="oi oi-list" aria-hidden="true"></span> Licencias
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="ausencia">
+                <span class="oi oi-plus" aria-hidden="true"></span> Ausencia
+            </NavLink>
+        </div>
+         <div class="nav-item px-3">
+            <NavLink class="nav-link" href="ausencias">
+                <span class="oi oi-list" aria-hidden="true"></span> Ausencias
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="nomina">
+                <span class="oi oi-plus" aria-hidden="true"></span> Nómina
+            </NavLink>
+        </div>
+         <div class="nav-item px-3">
+            <NavLink class="nav-link" href="Vacaciones">
+                <span class="oi oi-plus" aria-hidden="true"></span> Vacación
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="vacaciones_consulta">
+                <span class="oi oi-list" aria-hidden="true"></span> Vacaciones
+            </NavLink>
+        </div>
+        
+        
+       
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

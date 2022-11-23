@@ -1,0 +1,212 @@
+@page "/Vacaciones"
+@page "/vacaciones/{VacacionesId:int}"
+
+@inject VacacionesBLL VacacionesBLL
+@inject EmpleadosBLL empleadosBLL
+@inject NotificationService notificationService
+
+<EditForm Model="vacaciones" OnValidSubmit="Guardar">
+    <DataAnnotationsValidator />
+    <div class="card">
+        <div class="card-header">
+            <h3>Registro de Vacaciones</h3>
+        </div>
+        <div class="card-body">
+            <div class="container overflow-hidden">
+                <div class="row gy-6">
+                    @*VacacionesId*@
+                    <label>Vacaciones ID</label>
+                    <div class="form-group">
+                        <div class="form-row align-items-center">
+                            <div class="col-5">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <InputNumber @bind-Value="vacaciones.VacacionesId" class="form-control" />
+                                        <div class="input-group-append">
+                                            <button type="button" class="input-group-text btn btn-primary" @onclick="Buscar"> <i
+                                        class="oi oi-magnifying-glass" /></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            @*Empleado ID*@
+                            <div class="form-group">
+                                <div class="mb-3">
+                                    <label>Empleado ID</label>
+                                    <InputSelect class="form-select" @bind-Value="vacaciones.EmpleadoId">
+                                        <option value="0" disabled> Seleccione uno </option>
+                                        @foreach (Empleados empleado in listaEmpleadoId)
+                                        {
+                                            <option value="@empleado.EmpleadoId">@empleado.Nombre (ID:
+                                                @empleado.EmpleadoId)</option>
+                                        }
+                                    </InputSelect>
+                                    <ValidationMessage For="@(() => vacaciones.EmpleadoId)" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        @*Dias Inicio de vacaciones*@
+                        <label> Inicio vacaciones </label>
+                        <div class="form-group">
+                            <InputDate @bind-Value="vacaciones.DiasInicio" class="form-control" />
+                            <ValidationMessage For="@(() => vacaciones.DiasInicio)" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        @*Dias de fin de vacaciones*@
+                        <label>Fin Vacaciones</label>
+                        <div class="form-group">
+                            <InputDate @bind-Value="vacaciones.DiasFinal" class="form-control" />
+                            <ValidationMessage For="@(() => vacaciones.DiasFinal)" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        @*Incentivo*@
+                        <div class="form-group">
+                            <label>Incentivo</label>
+                            <InputNumber @bind-Value="vacaciones.Incentivo" class="form-control" />
+                            <ValidationMessage For="@(() => vacaciones.Incentivo)" />
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+            <h1>
+                <span class="text-danger">@mensaje</span>
+            </h1>
+
+
+        </div>
+        <div class="card-footer">
+            <div class="form-group text-center" display: inline-block>
+                <button type="button" class="btn btn-lg btn-primary"> <i class="oi oi-file" /> Nuevo</button>
+                <button type="submit" class="btn btn-lg btn-success"><i class="oi oi-document" /> Guardar</button>
+                <button type="button" class="btn btn-lg btn-danger" @onclick="Eliminar"><i class="oi oi-trash" />
+                    Eliminar</button>
+            </div>
+        </div>
+    </div>
+</EditForm>
+
+@code {
+    [Parameter]
+    public int VacacionesId { get; set; }
+    public int EmpleadoId { get; set; }
+    public Vacaciones vacaciones { get; set; } = new Vacaciones();
+    public List<Empleados> listaEmpleadoId { get; set; } = new List<Empleados>();
+    public Empleados empleado { get; set; } = new Empleados();
+
+    public String mensaje { get; set; } = "";
+
+    public void Nuevo()
+    {
+        vacaciones = new Vacaciones();
+    }
+    @* bool Validar()
+        {
+        return vacaciones.Nombre.Contains(".");
+        } *@
+
+    protected override void OnInitialized()
+    {
+        listaEmpleadoId = empleadosBLL.GetList(p => true);
+        if (VacacionesId > 0)
+        {
+            
+            this.vacaciones.VacacionesId = VacacionesId;
+            this.Buscar();
+        }
+    }
+
+    public void Guardar()
+    {
+        bool guardo;
+
+        
+
+        guardo = VacacionesBLL.Guardar(this.vacaciones);
+
+        if (guardo)
+        {
+            ShowNotification(
+            new NotificationMessage
+            {
+                Severity = NotificationSeverity.Success,
+                Summary = "Guardado correctamente"
+            });
+
+            Nuevo();
+
+        }
+        else
+        {
+            ShowNotification(
+            new NotificationMessage
+            {
+                Severity = NotificationSeverity.Error,
+                Summary = "No se guardo correctamente."
+            });
+
+        }
+
+
+    }
+    private void Buscar()
+    {
+        if (vacaciones.VacacionesId > 0)
+        {
+            var encontrado = VacacionesBLL.Buscar(vacaciones.VacacionesId);
+
+            if (encontrado != null)
+                this.vacaciones = encontrado;
+            else
+            {
+                ShowNotification(
+                new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Warning,
+                    Summary = "No Encontrado..."
+                });
+            }
+
+        }
+    }
+
+    public void Eliminar()
+    {
+        bool elimino;
+
+        elimino = VacacionesBLL.Eliminar(vacaciones);
+
+        if (elimino)
+        {
+            Nuevo();
+            ShowNotification(
+            new NotificationMessage
+            {
+                Severity = NotificationSeverity.Success,
+                Summary = "Fue eliminado correctamente."
+            });
+        }
+        else
+        {
+            ShowNotification(
+            new NotificationMessage
+            {
+                Severity = NotificationSeverity.Error,
+                Summary = "No fue Eliminado, intentar nuevamente."
+            });
+        }
+    }
+    void ShowNotification(NotificationMessage message)
+    {
+        notificationService.Notify(message);
+
+    }
+}

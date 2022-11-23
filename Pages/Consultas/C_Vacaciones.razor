@@ -1,0 +1,120 @@
+@page "/vacaciones_consulta"
+@inject VacacionesBLL VacacionesBLL;
+
+<EditForm Model="lista">
+    <DataAnnotationsValidator />
+    <div class="card-header">
+        <h3>Consulta de Vacaciones</h3>
+    </div>
+
+    <div class="input-group">
+        @*Fecha*@
+        <div class="col-2">
+            <label> Dia Inicio</label>
+            <div class="mb-3">
+                <InputDate @bind-Value="DiasInicio" class="form-control" />
+                <ValidationMessage For="@(() => DiasInicio)" />
+            </div>
+        </div>
+        <div class="col-2 mx-3">
+            <label> Dia Fin</label>
+            <div class="mb-3">
+                <InputDate @bind-Value="DiasFinal" class="form-control" />
+                <ValidationMessage For="@(() => DiasFinal)" />
+            </div>
+        </div>
+    </div>
+    <div class="input-group">
+        <div class="col-2 mx-3">
+            <div class="row">
+                <select class="form-select">
+                    <option value="0" disabled> Seleccione una opcion</option>
+
+                    <option value="1">Vacaciones Id</option>
+                    <option value="2">EmpleadoId</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-2 mx-5">
+            <input type="text" class="form-control" @bind="Criterio">
+        </div>
+        <div class="col-2">
+            <div class="input-group-append">
+                <button type="button" @onclick="Buscar">
+                    <i>Buscar</i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>EmpleadoId</th>
+                <th>VacacionesId</th>
+                <th>Incentivo</th>
+                <th>Dia de Inicio</th>
+                <th>Dia de Fin</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var empleado in lista)
+            {
+                <tr>
+                    <td>@empleado.EmpleadoId</td>
+                    <td>@empleado.VacacionesId</td>
+                    <td>@empleado.Incentivo</td>
+                    <td>@empleado.DiasInicio</td>
+                    <td>@empleado.DiasFinal</td>
+                    <td><a href="empleados/@empleado.EmpleadoId">Ver</a></td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</EditForm>
+
+@code
+{
+    public string Filtro { get; set; } = "";
+
+    public string Criterio { get; set; } = "";
+
+    public DateTime DiasInicio { get; set; }
+
+    public DateTime DiasFinal { get; set; }
+
+    public Vacaciones vacaciones { get; set; } = new Vacaciones();
+
+    public List<Vacaciones> lista { get; set; } = new List<Vacaciones>();
+
+    public void Buscar()
+    {
+        lista = VacacionesBLL.GetList(e => true);
+        if (Criterio != null)
+        {
+            switch (Filtro)
+            {
+                case "0":
+                    lista = VacacionesBLL.GetList(e => true);
+                    break;
+                case "1":
+                    lista = VacacionesBLL.GetList(e => e.EmpleadoId.ToString() == (Criterio));
+                    break;
+                case "3":
+                    lista = VacacionesBLL.GetList(e => e.EmpleadoId.ToString() == (Criterio));
+                    break;
+            }
+        }
+        else
+        {
+            lista = VacacionesBLL.GetList(x => (x.DiasInicio >= DiasFinal) && (x.DiasInicio <= DiasFinal));
+
+            if (Criterio == null)
+                lista = VacacionesBLL.GetList(o => true);
+        }
+
+    }
+}

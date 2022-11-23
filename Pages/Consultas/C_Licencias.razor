@@ -1,0 +1,131 @@
+﻿@page "/licencias"
+@inject LicenciasBLL licenciasBLL
+
+<EditForm Model="lista">
+    <DataAnnotationsValidator />
+    <div class="card-header">
+        <h3>Consulta de Licencias</h3>
+    </div>
+
+    <div class="input-group">
+        @*Fecha*@
+        <div class="col-2">
+            <label> Desde</label>
+            <div class="mb-3">
+                <InputDate @bind-Value="FechaDesde" class="form-control" />
+                <ValidationMessage For="@(() => FechaDesde)" />
+            </div>
+        </div>
+        <div class="col-2 mx-3">
+            <label> Hasta</label>
+            <div class="mb-3">
+                <InputDate @bind-Value="FechaHasta" class="form-control" />
+                <ValidationMessage For="@(() => FechaHasta)" />
+            </div>
+        </div>
+    </div>
+    <div class="input-group">
+        <div class="col-2 mx-3">
+            <div class="row">
+                <select class="form-select">
+                    <option value="0"> Seleccione una opcion</option>
+                    <option value="1">LicenciaId</option>
+                    <option value="2">EmpleadoId</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-2 mx-5">
+            <input type="text" class="form-control" @bind="Criterio">
+        </div>
+        <div class="col-2">
+            <div class="input-group-append">
+                <button type="button" @onclick="Buscar">
+                    <i>Buscar</i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>LicenciaId</th>
+                <th>EmpleadoId</th>
+                <th>Fecha de emision</th>
+                <th>Fecha de inicio</th>
+                <th>Dias de reposo</th>
+                <th>Tipo de licencia</th>
+                <th>Caracteristicas</th>
+                <th>Nombre del medico</th>
+                <th>Lugar de emision</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var licencia in lista)
+            {
+                <tr>
+                    <th>@licencia.LicenciaId</th>
+                    <th>@licencia.EmpleadoId</th>
+                    <th>@licencia.FechaEmision</th>
+                    <th>@licencia.FechaInicio</th>
+                    <th>@licencia.DiasReposo</th>
+                    <th>@licencia.TipoLicencia</th>
+                    <th>@licencia.Caracteristica</th>
+                    <th>@licencia.NombreMedico</th>
+                    <th>@licencia.LugarEmision</th>
+                    <td><a href="licencias/@licencia.LicenciaId">Ver</a></td>
+                </tr>
+                total++;
+            }
+
+        </tbody>
+        <h6>Total licencias @total</h6>
+    </table>
+</EditForm>
+
+@code
+{
+    public string Filtro { get; set; } = "";
+
+    public string Criterio { get; set; } = "";
+
+    public DateTime FechaDesde { get; set; }
+
+    public DateTime FechaHasta { get; set; }
+     public int total = 0;
+
+    public Licencias licencia { get; set; } = new Licencias();
+
+    public List<Licencias> lista { get; set; } = new List<Licencias>();
+
+    public void Buscar()
+    {
+        lista = licenciasBLL.GetList(e => true);
+        if (Criterio != null)
+        {
+            switch (Filtro)
+            {
+                case "0":
+                    lista = licenciasBLL.GetList(e => true);
+                    break;
+                case "1":
+                    lista = licenciasBLL.GetList(e => e.LicenciaId.ToString() == (Criterio));
+                    break;
+                case "3":
+                    lista = licenciasBLL.GetList(e => e.EmpleadoId.ToString() == (Criterio));
+                    break;
+            }
+        }
+        else
+        {
+            lista = licenciasBLL.GetList(x => (x.FechaInicio >= FechaDesde) && (x.FechaInicio <= FechaHasta));
+
+            if (Criterio == null)
+                lista = licenciasBLL.GetList(o => true);
+        }
+
+    }
+}
+

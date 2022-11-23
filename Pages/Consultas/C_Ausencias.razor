@@ -1,0 +1,122 @@
+﻿@page "/ausencias"
+@inject AusenciasBLL ausenciasBLL
+<EditForm Model="lista">
+    <DataAnnotationsValidator />
+    <div class="card-header">
+        <h3>Consulta de Ausencias</h3>
+    </div>
+
+    <div class="input-group">
+        @*Fecha*@
+        <div class="col-2">
+            <label> Desde</label>
+            <div class="mb-3">
+                <InputDate @bind-Value="FechaDesde" class="form-control" />
+                <ValidationMessage For="@(() => FechaDesde)" />
+            </div>
+        </div>
+        <div class="col-2 mx-3">
+            <label> Hasta</label>
+            <div class="mb-3">
+                <InputDate @bind-Value="FechaHasta" class="form-control" />
+                <ValidationMessage For="@(() => FechaHasta)" />
+            </div>
+        </div>
+    </div>
+    <div class="input-group">
+        <div class="col-2 mx-3">
+            <div class="row">
+                <select class="form-select">
+                    <option value="0"> Seleccione una opcion</option>
+                    <option value="1">AusenciaId</option>
+                    <option value="2">EmpleadoId</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-2 mx-5">
+            <input type="text" class="form-control" @bind="Criterio">
+        </div>
+        <div class="col-2">
+            <div class="input-group-append">
+                <button type="button" @onclick="Buscar">
+                    <i>Buscar</i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>AusenciaId</th>
+                <th>EmpleadoId</th>
+                <th>Cantidad de dias</th>
+                <th>Motivo de ausencia</th>
+                <th>Fecha de la ausencia</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ausencia in lista)
+            {
+                <tr>
+                    <th>@ausencia.AusenciaId</th>
+                    <th>@ausencia.EmpleadoId</th>
+                    <th>@ausencia.CantidadDias</th>
+                    <th>@ausencia.MotivoAusencia</th>
+                    <th>@ausencia.Fecha</th>
+                    <td><a href="ausencias/@ausencia.AusenciaId">Ver</a></td>
+                </tr>
+                total++;
+            }
+
+        </tbody>
+        <h6>Total ausencias @total</h6>
+    </table>
+</EditForm>
+
+@code
+{
+    public string Filtro { get; set; } = "";
+
+    public string Criterio { get; set; } = "";
+
+    public DateTime FechaDesde { get; set; } = DateTime.Now;
+
+    public DateTime FechaHasta { get; set; } = DateTime.Now;
+    public int total = 0;
+
+    public Ausencias ausencias { get; set; } = new Ausencias();
+
+    public List<Ausencias> lista { get; set; } = new List<Ausencias>();
+
+    public void Buscar()
+    {
+        lista = ausenciasBLL.GetList(e => true);
+        if (Criterio != null)
+        {
+            switch (Filtro)
+            {
+                case "0":
+                    lista = ausenciasBLL.GetList(a => true);
+                    break;
+                case "1":
+                    lista = ausenciasBLL.GetList(a => a.AusenciaId.ToString() == (Criterio));
+                    break;
+                case "3":
+                    lista = ausenciasBLL.GetList(a => a.EmpleadoId.ToString() == (Criterio));
+                    break;
+            }
+        }
+        else
+        {
+            lista = ausenciasBLL.GetList(x => (x.Fecha >= FechaDesde) && (x.Fecha <= FechaHasta));
+
+            if (Criterio == null)
+                lista = ausenciasBLL.GetList(o => true);
+        }
+
+    }
+}

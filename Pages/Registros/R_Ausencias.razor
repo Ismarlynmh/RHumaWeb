@@ -1,0 +1,212 @@
+﻿@page "/ausencia"
+@page "/ausencias/{AusenciaId:int}"
+
+@inject AusenciasBLL ausenciasBLL
+@inject EmpleadosBLL empleadosBLL
+@inject NotificationService notificationService
+
+
+
+<EditForm Model="ausencia" OnValidSubmit="Guardar">
+    <DataAnnotationsValidator />
+    <div class="card">
+        <div class="card-header">
+            <h3>Registro de Ausencia</h3>
+        </div>
+        <div class="card-body">
+            <div class="container overflow-hidden">
+                <div class="row gy-6">
+                    @*PrestamoId*@
+                    <label>Ausencia ID</label>
+                    <div class="form-group">
+                        <div class="form-row align-items-center">
+                            <div class="col-5">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <InputNumber @bind-Value="ausencia.AusenciaId" class="form-control" />
+                                        <div class="input-group-append">
+                                            <button type="button" class="input-group-text btn btn-primary" @onclick="Buscar"> <i
+                                        class="oi oi-magnifying-glass" /></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            @*eEmpleadoId*@
+                            <div class="form-group">
+                                <div class="mb-3">
+                                    <label>Empelado ID</label>
+                                    <InputSelect class="form-select" @bind-Value="ausencia.EmpleadoId">
+                                        <option value="0" disabled> Seleccione uno </option>
+                                        @foreach (Empleados empleado in listaEmpleadoId)
+                                        {
+                                            <option value="@empleado.EmpleadoId">@empleado.Nombre (ID:
+                                                @empleado.EmpleadoId)</option>
+                                        }
+                                    </InputSelect>
+                                    <ValidationMessage For="@(() => ausencia.EmpleadoId)" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        @*Dias de falta*@
+                        <div class="form-group">
+                            <label>Cantidad de dias en ausencia</label>
+                            <InputNumber @bind-Value="ausencia.CantidadDias" class="form-control" />
+                            <ValidationMessage For="@(() => ausencia.CantidadDias)" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        @*Motivo e ausencia*@
+                        <label>Motivo de ausencia</label>
+                        <div class="form-group">
+                            <InputText @bind-Value="ausencia.MotivoAusencia" class="form-control" />
+                            <ValidationMessage For="@(() => ausencia.MotivoAusencia)" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1>
+                <span class="text-danger">@mensaje</span>
+            </h1>
+
+
+        </div>
+        <div class="card-footer">
+            <div class="form-group text-center" display: inline-block>
+                <button type="button" class="btn btn-lg btn-primary"> <i class="oi oi-file" /> Nuevo</button>
+                <button type="submit" class="btn btn-lg btn-success"><i class="oi oi-document" /> Guardar</button>
+                <button type="button" class="btn btn-lg btn-danger" @onclick="Eliminar"><i class="oi oi-trash" />
+                    Eliminar</button>
+            </div>
+        </div>
+    </div>
+</EditForm>
+
+@code {
+    [Parameter]
+    public int AusenciaId { get; set; }
+    public int EmpleadoId { get; set; }
+
+
+
+    public List<Empleados> listaEmpleadoId { get; set; } = new List<Empleados>();
+
+    public Ausencias ausencia { get; set; } = new Ausencias();
+    public Empleados empleado { get; set; } = new Empleados();
+
+    public String mensaje { get; set; } = "";
+
+    public void Nuevo()
+    {
+        ausencia = new Ausencias();
+    }
+    bool Validar()
+    {
+        return ausencia.MotivoAusencia.Contains(".");
+    }
+
+    protected override void OnInitialized()
+    {
+
+        listaEmpleadoId = empleadosBLL.GetList(p => true);
+        if (EmpleadoId > 0)
+        {
+            this.ausencia.AusenciaId = AusenciaId;
+
+            this.Buscar();
+        }
+    }
+
+    public void Guardar()
+    {
+        bool guardo;
+
+        if (!Validar())
+        {
+            mensaje = "Hay errores En el motivo, por favor terminar la oracion con un punto.";
+            return;
+        }
+
+        guardo = ausenciasBLL.Guardar(this.ausencia);
+
+        if (guardo)
+        {
+            ShowNotification(
+            new NotificationMessage
+            {
+                Severity = NotificationSeverity.Success,
+                Summary = "Guardado correctamente"
+            });
+
+            Nuevo();
+
+        }
+        else
+        {
+            ShowNotification(
+            new NotificationMessage
+            {
+                Severity = NotificationSeverity.Error,
+                Summary = "No se guardo correctamente."
+            });
+
+        }
+
+
+    }
+    private void Buscar()
+    {
+        if (ausencia.AusenciaId > 0)
+        {
+            var encontrado = ausenciasBLL.Buscar(ausencia.AusenciaId);
+
+            if (encontrado != null)
+                this.ausencia = encontrado;
+            else
+            {
+                ShowNotification(
+                new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Warning,
+                    Summary = "No Encontrado..."
+                });
+            }
+
+        }
+    }
+
+    public void Eliminar()
+    {
+        bool elimino;
+
+        elimino = ausenciasBLL.Eliminar(ausencia);
+
+        if (elimino)
+        {
+            Nuevo();
+            ShowNotification(
+            new NotificationMessage
+            {
+                Severity = NotificationSeverity.Success,
+                Summary = "Fue eliminado correctamente."
+            });
+        }
+        else
+        {
+            ShowNotification(
+            new NotificationMessage
+            {
+                Severity = NotificationSeverity.Error,
+                Summary = "No fue Eliminado, intentar nuevamente."
+            });
+        }
+    }
+    void ShowNotification(NotificationMessage message)
+    {
+        notificationService.Notify(message);
+
+    }
+}

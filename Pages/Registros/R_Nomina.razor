@@ -1,0 +1,177 @@
+@page "/nomina"
+@page "/nomina/{NominaId:int}"
+
+@inject NominaBLL NominaBLL
+@inject EmpleadosBLL empleadosBLL
+@inject NotificationService notificationService
+
+<EditForm Model="nomina" OnValidSubmit="Guardar">
+    <DataAnnotationsValidator />
+
+    <div class="card shadow-lg">
+        <div class="card-header">
+            <h3>Registro de Nomina</h3>
+
+        </div>
+        <div class="card-body">
+            @*Nomina*@
+            <div class="form-row align-items-center">
+                <div class="col">
+                    <div class="form-group">
+                        <label>NominaId</label>
+                        <div class="input-group">
+                            <InputNumber @bind-Value="nomina.NominaId" class="form-control col-4" />
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-primary input-group-text" @onclick="Buscar">
+                                    <i class="oi oi-magnifying-glass" /> Buscar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @*Pago*@
+            <div class="form-group">
+                <label>pago</label>
+                <InputNumber @bind-Value="nomina.pago" class="form-control" />
+                <ValidationMessage For="@(() => nomina.pago)" />
+            </div>
+
+            @*Forma Pago*@
+            <div class="mb-3">
+                <label>Forma de pago</label>
+                <InputSelect class="form-select" @bind-Value="nomina.Forma_Pago">
+                    <option value="0" disabled> Seleccione uno </option>
+                    <option value="1">Quincenal</option>
+                    <option value="2">Mensual</option>
+                </InputSelect>
+                <InputText @bind-Value="nomina.Forma_Pago" class="form-control" />
+                <ValidationMessage For="@(() => nomina.Forma_Pago)" />
+            </div>
+
+            @*EmpleadoId*@
+            <div class="form-group">
+                <div class="mb-3">
+                    <label>Empleado ID</label>
+                    <InputSelect class="form-select" @bind-Value="nomina.EmpleadoId">
+                        <option value="0" disabled> Seleccione uno </option>
+                        @foreach (Empleados empleado in listaEmpleadoId)
+                        {
+                            <option value="@empleado.EmpleadoId">@empleado.Nombre (ID:
+                                @empleado.EmpleadoId)</option>
+                        }
+                    </InputSelect>
+                    <ValidationMessage For="@(() => nomina.EmpleadoId)" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <h1>
+            <span class="text-danger">@mensaje</span>
+        </h1>
+
+        <div class="card-footer">
+            <div class="form-group text-center" display: inline-block>
+                <button type="button" class="btn btn-lg btn-primary" @onclick="Nuevo">
+                    <i class="oi oi-file" /> Nuevo
+                </button>
+                <button type="submit" class="btn btn-lg btn-success">
+                    <i class="oi oi-document" /> Guardar
+                </button>
+                <button type="button" class="btn btn-lg btn-danger" @onclick="Eliminar">
+                    <i class="oi oi-trash" /> Eliminar
+                </button>
+            </div>
+        </div>
+    </div>
+</EditForm>
+
+@code {
+
+
+    [Parameter]
+    public int NominaId { get; set; }
+    public int EmpleadoId { get; set; }
+
+    public int pago { get; set; }
+    public Nomina nomina { get; set; } = new Nomina();
+
+    public String mensaje { get; set; } = "";
+    public Empleados empleado { get; set; } = new Empleados();
+
+    public List<Empleados> listaEmpleadoId { get; set; } = new List<Empleados>();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        listaEmpleadoId = empleadosBLL.GetList(p => true);
+        if (NominaId > 0)
+        {
+            this.nomina.NominaId = NominaId;
+            await this.Buscar();
+        }
+    }
+
+    private async Task Buscar()
+    {
+        if (nomina.NominaId > 0)
+        {
+            var encontrado = await NominaBLL.Buscar(nomina.NominaId);
+
+            if (encontrado != null)
+                this.nomina = encontrado;
+        }
+    }
+
+    public void Nuevo()
+    {
+        mensaje = "";
+        nomina = new Nomina();
+    }
+
+    public async Task Guardar()
+    {
+        bool guardo;
+
+        guardo = await NominaBLL.Guardar(nomina);
+
+        if (guardo)
+        {
+            ShowNotification(
+            new NotificationMessage
+            {
+                Severity = NotificationSeverity.Success,
+                Summary = "Guardado correctamente"
+            });
+
+            Nuevo();
+
+        }
+    }
+
+    public async void Eliminar()
+    {
+        bool elimino;
+
+        elimino = await NominaBLL.Eliminar(nomina);
+
+        if (elimino)
+        {
+            Nuevo();
+            ShowNotification(
+            new NotificationMessage
+            {
+                Severity = NotificationSeverity.Success,
+                Summary = "Fue eliminado correctamente."
+            });
+        }
+    }
+
+    void ShowNotification(NotificationMessage message)
+    {
+        notificationService.Notify(message);
+
+    }
+
+    
+}
