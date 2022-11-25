@@ -38,36 +38,47 @@ public class EmpleadosBLL
         _contexto.Entry(empleado).State = EntityState.Modified;
         return _contexto.SaveChanges() > 0;
     }
-    public bool Eliminar(Empleados empleado)
+    public bool Eliminar(int EmpleadoId)
     {
-        _contexto.Entry(empleado).State = EntityState.Deleted;
-        return _contexto.SaveChanges() > 0;
-        //Var empleado = contexto.Empleados.Find(empleadoId);
-        //empleado.EstaEliminado = true;
-        //contexto.SaveChanges();
+        //bool confirmar = false;
+        //try
+        //{
+
+        //}
+        //catch(Exception)
+        //{
+        //    throw;
+        //}
+        //finally { _contexto.Dispose(); }
+        //return confirmar;
+        //_contexto.Entry(empleado).State = EntityState.Deleted;
+        //return _contexto.SaveChanges() > 0;
+        var empleado = _contexto.Empleados.Find(EmpleadoId);
+        return empleado.EstaEliminado = true;
+        _contexto.SaveChanges();
     }
 
     public Empleados? Buscar(int empleadoId)
     {
-        return _contexto.Empleados
-                .Where(e => e.EmpleadoId == empleadoId)
-                .AsNoTracking()
-                .SingleOrDefault();
         //return _contexto.Empleados
-        //        .Where(e => e.EmpleadoId == empleadoId && e.EstaEliminado == false)
+        //        .Where(e => e.EmpleadoId == empleadoId)
+        //        .AsNoTracking()
         //        .SingleOrDefault();
+        return _contexto.Empleados
+                .Where(e => e.EmpleadoId == empleadoId && e.EstaEliminado == false)
+                .SingleOrDefault();
 
     }
 
     public List<Empleados> GetList(Expression<Func<Empleados, bool>> Criterio)
     {
-        return _contexto.Empleados
-            .AsNoTracking()
-            .Where(Criterio)
-            .ToList();
         //return _contexto.Empleados
-        //        .Where(e => e.EstaEliminado == false)
-        //        .Where(Criterio)
-        //        .ToList();
+        //    .AsNoTracking()
+        //    .Where(Criterio)
+        //    .ToList();
+        return _contexto.Empleados
+                .Where(e => e.EstaEliminado == false)
+                .Where(Criterio)
+                .ToList();
     }
 }
