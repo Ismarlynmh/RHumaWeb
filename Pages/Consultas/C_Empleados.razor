@@ -127,7 +127,7 @@
             lista = empleadosBLL.GetList(x => (x.FechaIngreso >= FechaDesde) && (x.FechaIngreso <= FechaHasta));
 
             if (Criterio == null)
-                lista = empleadosBLL.GetList(o => false);
+                lista = empleadosBLL.GetList(o => true);
         }
 
     }
