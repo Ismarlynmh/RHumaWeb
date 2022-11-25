@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "aK8qAAn/07tRZf9xbEeq/JhgLRYpA3l4mR/xiFQDges=",
+  "Hash": "CvJXO1v+xuha8lJ7jh3fe0knfkA/QumHexb32sXffU0=",
   "Source": "RecursosHumanos",
   "BasePath": "_content/RecursosHumanos",
   "Mode": "Default",
@@ -10,29 +10,12 @@
     {
       "Name": "RecursosHumanos\\wwwroot",
       "Source": "RecursosHumanos",
-      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\",
       "BasePath": "_content/RecursosHumanos",
       "Pattern": "**"
     }
   ],
   "Assets": [
-    {
-      "Identity": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\dark.css",
-      "SourceId": "Radzen.Blazor",
-      "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\",
-      "BasePath": "_content/Radzen.Blazor",
-      "RelativePath": "css/dark.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\dark.css"
-    },
     {
       "Identity": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\dark-base.css",
       "SourceId": "Radzen.Blazor",
@@ -51,12 +34,12 @@
       "OriginalItemSpec": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\dark-base.css"
     },
     {
-      "Identity": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\default.css",
+      "Identity": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\dark.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
       "ContentRoot": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
-      "RelativePath": "css/default.css",
+      "RelativePath": "css/dark.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -65,7 +48,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\default.css"
+      "OriginalItemSpec": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\dark.css"
     },
     {
       "Identity": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\default-base.css",
@@ -85,12 +68,12 @@
       "OriginalItemSpec": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\default-base.css"
     },
     {
-      "Identity": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\humanistic.css",
+      "Identity": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\default.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
       "ContentRoot": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
-      "RelativePath": "css/humanistic.css",
+      "RelativePath": "css/default.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -99,7 +82,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\humanistic.css"
+      "OriginalItemSpec": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\default.css"
     },
     {
       "Identity": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\humanistic-base.css",
@@ -119,12 +102,12 @@
       "OriginalItemSpec": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\humanistic-base.css"
     },
     {
-      "Identity": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\material.css",
+      "Identity": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\humanistic.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
       "ContentRoot": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
-      "RelativePath": "css/material.css",
+      "RelativePath": "css/humanistic.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -133,7 +116,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\material.css"
+      "OriginalItemSpec": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\humanistic.css"
     },
     {
       "Identity": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\material-base.css",
@@ -153,12 +136,12 @@
       "OriginalItemSpec": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\material-base.css"
     },
     {
-      "Identity": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\software.css",
+      "Identity": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\material.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
       "ContentRoot": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
-      "RelativePath": "css/software.css",
+      "RelativePath": "css/material.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -167,7 +150,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\software.css"
+      "OriginalItemSpec": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\material.css"
     },
     {
       "Identity": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\software-base.css",
@@ -187,12 +170,12 @@
       "OriginalItemSpec": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\software-base.css"
     },
     {
-      "Identity": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\standard.css",
+      "Identity": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\software.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
       "ContentRoot": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
-      "RelativePath": "css/standard.css",
+      "RelativePath": "css/software.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -201,7 +184,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\standard.css"
+      "OriginalItemSpec": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\software.css"
     },
     {
       "Identity": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\standard-base.css",
@@ -219,6 +202,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\standard-base.css"
+    },
+    {
+      "Identity": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\standard.css",
+      "SourceId": "Radzen.Blazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\",
+      "BasePath": "_content/Radzen.Blazor",
+      "RelativePath": "css/standard.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\css\\standard.css"
     },
     {
       "Identity": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\fonts\\MaterialIcons-Regular.woff",
@@ -578,10 +578,10 @@
       "OriginalItemSpec": "C:\\Users\\Ismarlin\\.nuget\\packages\\radzen.blazor\\4.1.6\\staticwebassets\\Radzen.Blazor.js"
     },
     {
-      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\obj\\Debug\\net6.0\\scopedcss\\bundle\\RecursosHumanos.styles.css",
+      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\obj\\Debug\\net6.0\\scopedcss\\bundle\\RecursosHumanos.styles.css",
       "SourceId": "RecursosHumanos",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/RecursosHumanos",
       "RelativePath": "RecursosHumanos.styles.css",
       "AssetKind": "All",
@@ -592,13 +592,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\obj\\Debug\\net6.0\\scopedcss\\bundle\\RecursosHumanos.styles.css"
+      "OriginalItemSpec": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\obj\\Debug\\net6.0\\scopedcss\\bundle\\RecursosHumanos.styles.css"
     },
     {
-      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\RecursosHumanos.bundle.scp.css",
+      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\RecursosHumanos.bundle.scp.css",
       "SourceId": "RecursosHumanos",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/RecursosHumanos",
       "RelativePath": "RecursosHumanos.bundle.scp.css",
       "AssetKind": "All",
@@ -609,13 +609,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\RecursosHumanos.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\RecursosHumanos.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "RecursosHumanos",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\",
       "BasePath": "_content/RecursosHumanos",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -629,10 +629,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "RecursosHumanos",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\",
       "BasePath": "_content/RecursosHumanos",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -646,112 +646,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "SourceId": "RecursosHumanos",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\",
-      "BasePath": "_content/RecursosHumanos",
-      "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
-    },
-    {
-      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
-      "SourceId": "RecursosHumanos",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\",
-      "BasePath": "_content/RecursosHumanos",
-      "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
-    },
-    {
-      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
-      "SourceId": "RecursosHumanos",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\",
-      "BasePath": "_content/RecursosHumanos",
-      "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
-    },
-    {
-      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
-      "SourceId": "RecursosHumanos",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\",
-      "BasePath": "_content/RecursosHumanos",
-      "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
-    },
-    {
-      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
-      "SourceId": "RecursosHumanos",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\",
-      "BasePath": "_content/RecursosHumanos",
-      "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
-    },
-    {
-      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
-      "SourceId": "RecursosHumanos",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\",
-      "BasePath": "_content/RecursosHumanos",
-      "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
-    },
-    {
-      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
-      "SourceId": "RecursosHumanos",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\",
       "BasePath": "_content/RecursosHumanos",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -765,10 +663,112 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "RecursosHumanos",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\",
+      "BasePath": "_content/RecursosHumanos",
+      "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "SourceId": "RecursosHumanos",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\",
+      "BasePath": "_content/RecursosHumanos",
+      "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
+    },
+    {
+      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "SourceId": "RecursosHumanos",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\",
+      "BasePath": "_content/RecursosHumanos",
+      "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
+    },
+    {
+      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "SourceId": "RecursosHumanos",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\",
+      "BasePath": "_content/RecursosHumanos",
+      "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
+    },
+    {
+      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "SourceId": "RecursosHumanos",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\",
+      "BasePath": "_content/RecursosHumanos",
+      "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
+    },
+    {
+      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "SourceId": "RecursosHumanos",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\",
+      "BasePath": "_content/RecursosHumanos",
+      "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "SourceId": "RecursosHumanos",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\",
       "BasePath": "_content/RecursosHumanos",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -782,10 +782,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\ICON-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\css\\open-iconic\\README.md",
+      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\css\\open-iconic\\README.md",
       "SourceId": "RecursosHumanos",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\",
       "BasePath": "_content/RecursosHumanos",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -799,10 +799,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\css\\site.css",
       "SourceId": "RecursosHumanos",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\",
       "BasePath": "_content/RecursosHumanos",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -816,10 +816,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\favicon.ico",
       "SourceId": "RecursosHumanos",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\Recursos\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\wwwroot\\",
       "BasePath": "_content/RecursosHumanos",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7gcEMGxwhp0puC5EVBBY3v0W4MAOXyqQ2J0D7c1bOX+hsHJwd4UI3EfCQQs1FxoWBnPoN0RIFGNry71Yot8jTA==",
+  "dgSpecHash": "tHxhMSsRaGd7cTa/5waIa9Yk0vImsM20j5FD+fESY6IGQgMmdnkv/MwGejTZF77OvW5RAS5V1kqB5Ph6EXlTrA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ismarlin\\Source\\Repos\\RHumaWeb\\RecursosHumanos.csproj",
+  "projectFilePath": "C:\\Users\\Ismarlin\\OneDrive\\Documentos\\Semestre ProyectoAplicado\\Proyecto Aplicado\\RHumaWeb\\RecursosHumanos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ismarlin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Ismarlin\\.nuget\\packages\\libsassbuilder\\2.0.1\\libsassbuilder.2.0.1.nupkg.sha512",

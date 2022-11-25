@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore;
 public class Empleados
 {
     [Key]
-    //public bool EstaEliminado { get; set; } = false;
     public int EmpleadoId { get; set; }
 
     [Required(ErrorMessage = "Favor de Ingresar el nombre.")]
@@ -45,4 +44,5 @@ public class Empleados
 
     [Required(ErrorMessage = "Favor de Ingresar la fecha de ingreso.")]
     public DateTime FechaIngreso { get; set; } = DateTime.Now;
+    public bool EstaEliminado { get; set; } = false;
 }

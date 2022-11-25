@@ -66,6 +66,9 @@ namespace RecursosHumanos.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("TEXT");
 
+                    b.Property<bool>("EstaEliminado")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("EstadoCivil")
                         .HasColumnType("TEXT");
 
